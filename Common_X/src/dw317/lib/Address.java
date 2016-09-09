@@ -16,9 +16,9 @@ public class Address {
 
 public Address() { }
 public Address (String civicNumber, String streetName, String city) {
-this.civicNumber = civicNumber;
-this.streetName = streetName;
-this.city = city;
+this.civicNumber = validateExistence("civic Number", civicNumber, "civic Number");
+this.streetName = validateExistence("street Name", streetName, "street Name");
+this.city = validateExistence("city Name", city, "city Name");
 }
 
 /**
@@ -58,7 +58,8 @@ public void setCity(String city) {
 	this.city = city;
 }
 public void setCivicNumber(String civicNumber) {
-	this.civicNumber = civicNumber;
+	this.civicNumber = validateExistence("civic Number", civicNumber, "civic Number");
+	//this.civicNumber = civicNumber;
 }
 public void setProvince(String province) {
 	this.province = province;
@@ -69,5 +70,15 @@ public void setCode(String code) {
 public void setStreetName(String streetName) {
 	this.streetName = streetName;
 }
+
+//validate method
+private String validateExistence(String classError, String fieldID, String fieldLabel) {
+	String trimmedString = fieldID.trim();
+	if (trimmedString.trim().isEmpty())
+		throw new IllegalArgumentException(classError+" Error - " + fieldLabel
+				+ " must exist. Invalid value = " + fieldID);
+	return trimmedString;
+}
+
 
 }
