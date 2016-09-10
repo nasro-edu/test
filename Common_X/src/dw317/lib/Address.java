@@ -73,6 +73,10 @@ public void setStreetName(String streetName) {
 
 //validate method
 private String validateExistence(String classError, String fieldID, String fieldLabel) {
+	if(fieldID==null)
+		throw new IllegalArgumentException(classError+" Error - " + fieldLabel
+				+ " must not b null. Invalid value = " + fieldID);
+		
 	String trimmedString = fieldID.trim();
 	if (trimmedString.trim().isEmpty())
 		throw new IllegalArgumentException(classError+" Error - " + fieldLabel
