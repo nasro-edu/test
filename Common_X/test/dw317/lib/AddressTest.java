@@ -35,12 +35,20 @@ public class AddressTest {
 		testSetCivicNumber();
 		// --- testing Name class
 		
-		Name myName = new Name("Nasreddine", "Hallam");
-		out.println("My Name is :"+ myName);
+		Name myName = new Name("Nasr-eddine", "Hall'am");
+		
+		Name hisName = new Name("Leo", "Messi");
+		//out.println("My Name is :"+ myName);
 		Address theAddress = new Address("196", "Parc", "Montreal");
 		
 		Person me = new Person (myName,theAddress);
 	   out.println("my info ="+me);
+	   
+	   Email myEmail = new Email("hello@bro-com");
+	   out.println("my emila  ="+myEmail);
+	   Person he = new Person(me);
+	   he.setFullName(hisName);
+	   out.println("my info ="+he);
 	}
 
 	private static void testTheThreeParameterConstructor(String testCase,

@@ -16,7 +16,7 @@ public class MasterCard extends AbstractCreditCard {
 	
 	public void print () {System.out.println(toString());} 
 	
-	private   static String validateNumber(String number) throws IllegalArgumentException
+	private   static String validateNumber(String number) 
 	{return  validateLuhnAlgorithm(number);
 	}
 	
