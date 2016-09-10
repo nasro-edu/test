@@ -8,7 +8,6 @@ import static java.lang.System.*;
  *
  */
 public class CreditCardTest {
-
 	/**
 	 * @param args
 	 */

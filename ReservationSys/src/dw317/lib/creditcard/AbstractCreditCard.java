@@ -9,6 +9,7 @@ import static java.lang.System.out;
  * @author hnasreddine
  *
  */
+
 public abstract class AbstractCreditCard implements CreditCard{
 	private static final long serialVersionUID = 42031768871L;
 	final CardType cardType;
