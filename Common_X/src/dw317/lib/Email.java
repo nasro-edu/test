@@ -33,7 +33,7 @@ NOTE:
 	It is invoked by the constructor. If the address is invalid, throw an IllegalArgumentException */
 import java.io.Serializable;
 
-public class Email implements Serializable, Comparable{
+public final class Email implements Serializable, Comparable{
 
 	private final long  serialVersionUID = 42031768871L;
 	private final String  address;
@@ -50,7 +50,39 @@ public class Email implements Serializable, Comparable{
 							}
 	
 			//override the following methods
-	public boolean equals(Object object) {return true;}
+	public boolean equals__(Object object) 
+	{return true;}
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((address == null) ? 0 : address.hashCode());
+		return result;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (!(obj instanceof Email))
+			return false;
+		Email other = (Email) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		return true;
+	}
+
 	public String getNumber(){return "";}
 	public String getType() {return this.toString();} //: Scheme
 	public String  toString(){ return address;}
@@ -60,8 +92,18 @@ public class Email implements Serializable, Comparable{
 			String userId = Name.validateName("[a-zA-Z ,-]+", splitAddress[0], 2, "emailID");
 			return (userId + "@"+ host);
 			}
+	
+	public int compareTo(Email arg0) {
+		// TODO Auto-generated method stub
+		int compareHost = this.getHost().compareToIgnoreCase(arg0.getHost());
+		int compareID = this.getHost().compareToIgnoreCase(arg0.getUserId());
+		System.out.println(this.getHost()+" vs "+ arg0.getHost()+ ": "+ compareHost);
+		if(compareHost==0) return compareID;
+		return compareHost;
+		}
+
 	@Override
-	public int compareTo(Object arg0) {
+	public int compareTo(Object o) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
