@@ -16,6 +16,7 @@ public final class SomeBody {
 
 private final Name name;
 private final String fullName;
+
 public String getFullName() {
 	return fullName;
 }
