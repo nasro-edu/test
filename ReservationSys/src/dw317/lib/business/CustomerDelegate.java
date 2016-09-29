@@ -4,6 +4,7 @@
 package dw317.lib.business;
 
 import java.io.Serializable;
+import java.util.Optional;
 
 import dw317.lib.*;
 import dw317.lib.creditcard.*;
@@ -22,6 +23,7 @@ public interface CustomerDelegate extends Comparable, Serializable{
 
 	public abstract Name getName();//: Name {must return a deep copy}
 	public abstract Email getEmail();
-	public abstract  CreditCard getCreditCard();// : Optional<CreditCard>
-	public abstract void setCreditCard(CreditCard card);
+	public abstract  Optional<CreditCard> getCreditCard();// : Optional<CreditCard>
+	//public abstract  CreditCard getCreditCard();// : Optional<CreditCard>
+	public abstract void setCreditCard(Optional<CreditCard> card);
 }

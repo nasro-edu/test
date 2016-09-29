@@ -3,6 +3,8 @@
  */
 package dw317.lib.business;
 
+import java.util.Optional;
+
 import dw317.lib.Email;
 import dw317.lib.Name;
 import dw317.lib.creditcard.CreditCard;
@@ -33,9 +35,10 @@ public final class Customer implements CustomerDelegate{
 	private Email email ;
 	private CreditCard creditCard;
 	
-	public Customer(Name name, Email email, CreditCard creditCard) 
+	public Customer(Name name, Email email, Optional<CreditCard> creditCard) 
 	{
-		this.name = name; this.email=email; this.creditCard= creditCard;
+		this.name = name; this.email=email; 
+		this.creditCard= creditCard.orElse(null);
 	}
 	public Customer(String fName, String lName, Email email) 
 	{
@@ -71,14 +74,14 @@ public final class Customer implements CustomerDelegate{
 	}
 
 	@Override
-	public CreditCard getCreditCard() {
+	public Optional<CreditCard> getCreditCard() {
 		// TODO Auto-generated method stub
-		return this.creditCard;
+		return (Optional.of(this.creditCard));
 	}
 
 	@Override
-	public void setCreditCard(CreditCard card) {
-		this.creditCard = card;
+	public void setCreditCard(Optional<CreditCard> card) {
+		this.creditCard = card.orElse(null);
 	}
 
 	//equals, hashCode, and toString methods
@@ -152,5 +155,6 @@ public final class Customer implements CustomerDelegate{
 	(as a member of a package called groupX.hotel.business in your test folder) in order to test the concrete class.*/
 	
 	public String toString() {return this.email.toString()+"*"+this.name.toString()+"*"+( (this.creditCard==null)?"":this.creditCard.toString());}
+	
 }
 

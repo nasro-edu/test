@@ -50,8 +50,8 @@ public class DawsonFactory_TEST {
 	Email cust1Email = new Email("JoeDoe@dawson.com");
 	Email cust2Email = new Email("jaya.pradish@vanier.com");
 	
-	Customer aCust1 = new Customer (cust1Name, cust1Email, aCard1);
-	Customer aCust2 = new Customer (cust2Name, cust2Email, aCard2);
+	Customer aCust1 = new Customer (cust1Name, cust1Email, Optional.ofNullable(aCard1));
+	Customer aCust2 = new Customer (cust2Name, cust2Email, Optional.ofNullable(aCard2));
 	
 	Resrevation aReservation1 = new Resrevation(aCust1,room1,checkInDate, checkOutDate);
 	Resrevation aReservation2 = new Resrevation(aCust2,room2,checkInDate, checkOutDate);

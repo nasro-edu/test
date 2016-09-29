@@ -6,6 +6,7 @@ package dw317.lib.data;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import dw317.lib.*;
 import dw317.lib.business.Customer;
@@ -26,10 +27,10 @@ public class HotelFileLoader_Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//String pathToDatFiles =  "D:\\0tem_DawsonColg\\java317\\ReservationSys\\src\\dw317\\lib\\data\\";
-		String pathToDatFiles =  "D:\\0tem_DawsonColg\\java317\\ReservationSys\\dataFiles\\";
-		String reservFileName  = pathToDatFiles+"reservationsACDV.txt";
-		String custFileName  =pathToDatFiles+"customerACDV.txt";
-		String roomFileName  =pathToDatFiles+"Rooms.txt";
+		final String  pathToDatFiles =  "D:\\0tem_DawsonColg\\java317\\ReservationSys\\dataFiles\\";
+		final String reservFileName  = pathToDatFiles+"reservationsACDV.txt";
+		final String custFileName  =pathToDatFiles+"customerACDV.txt";
+		final String roomFileName  =pathToDatFiles+"Rooms.txt";
 		
 		
 		HotelFileLoader hotelFileLoader =new HotelFileLoader();
@@ -59,7 +60,7 @@ public class HotelFileLoader_Test {
 						card = new AmexCard(tmpArr[4]);
 					}
 			}//if
-			Customer custObj = new Customer(name, email, card);
+			Customer custObj = new Customer(name, email, Optional.ofNullable(card));
 			customerObjList.add(custObj);
 			}
 		

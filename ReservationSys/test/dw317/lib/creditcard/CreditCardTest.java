@@ -4,6 +4,8 @@
 package dw317.lib.creditcard;
 import static java.lang.System.*;
 
+import java.util.Optional;
+
 import dw317.lib.*;
 import dw317.lib.business.*;
 import dw317.lib.business.RoomDelegate.RoomType;
@@ -38,10 +40,10 @@ public class CreditCardTest {
 	Email cust1Email = new Email("hello@bro-com");
 	Email cust2Email = new Email("hello@Brho-com");
 	
-	Customer aCust = new Customer (cust1Name, cust1Email, aCard2);
+	Customer aCust = new Customer (cust1Name, cust1Email, Optional.ofNullable(aCard2));
 	System.out.println(aCust.toString());;
 	
-	Customer aCust2 = new Customer (cust2Name, cust2Email, aCard);
+	Customer aCust2 = new Customer (cust2Name, cust2Email, Optional.ofNullable(aCard));
 	System.out.println(aCust2.toString());
 	if(aCust.equals(aCust2)) System.out.println("same"); else System.out.println("diff");
 	

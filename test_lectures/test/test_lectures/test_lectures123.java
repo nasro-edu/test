@@ -16,33 +16,38 @@ public class test_lectures123 {
 	 */
 	public static void main(String[] args) {
 		
+		short runLec1_copy=0, runLec2_Immutable=1, runLect3_Optional=0;
+		
 		//1. ------- compares hash code
-		Name name1= new Name ("Ali", "Day");
-		Name name2= new Name ("Ali", "Day");
-		//Name name2= new Name ("Sam", "Eric");
-		Telephone phone1= new Telephone(514, 457898);
-		Telephone phone2= new Telephone(514, 112233);
-		SomeBody persone1 = new SomeBody(name1, 19, phone1);
-		SomeBody persone2 = new SomeBody(name2, 19, phone1);
-
-		System.out.println("pwrsone1 and persone 2 are they equal?:"+persone1.equals(persone2));
-
-		Company comp1 = new Company("Ali Day", phone1, 123);
-		System.out.println("comapnay1 and persone 1 are they equal?:"+persone1.equals(comp1));
-
-		
-		Name hisName = new Name ("Leo", "Messi");
-		Name herName = new Name ("Pat", "Ricia");
-		//System.out.println(hisName.toString());
-		//System.out.println(herName.toString());
-		Telephone hisPhone = new Telephone(514, 457898);
-		SomeBody him = new SomeBody(hisName, 45, hisPhone );
-		
-		short runLec3=0, runLect4=1, runLec5=1;
-		
-		
-		if(runLec3==1)
+		if(runLec1_copy==1)
 		{
+			Name name1= new Name ("Ali", "Day");
+			Name name2= new Name ("Ali", "Day");
+			//Name name2= new Name ("Sam", "Eric");
+			Telephone phone1= new Telephone(514, 457898);
+			Telephone phone2= new Telephone(514, 112233);
+			SomeBody persone1 = new SomeBody(name1, 19, phone1);
+			SomeBody persone2 = new SomeBody(name2, 19, phone1);
+
+			System.out.println("pwrsone1 and persone 2 are they equal?:"+persone1.equals(persone2));
+
+			Company comp1 = new Company("Ali Day", phone1, 123);
+			System.out.println("comapnay1 and persone 1 are they equal?:"+persone1.equals(comp1));
+	
+		}
+		
+		// 2. defensive copy
+		if(runLec2_Immutable==1)
+		{
+			System.out.println("************ Final - Deep copy -defensive copy ********");
+			
+			Name hisName = new Name ("Leo", "Messi");
+			Name herName = new Name ("Pat", "Ricia");
+			//System.out.println(hisName.toString());
+			//System.out.println(herName.toString());
+			Telephone hisPhone = new Telephone(514, 457898);
+			SomeBody him = new SomeBody(hisName, 45, hisPhone );
+			
 			SomeBody her = new SomeBody(herName, 38);
 			System.out.println(him.toString());
 			System.out.println(her.toString());
@@ -52,10 +57,11 @@ public class test_lectures123 {
 			System.out.println(her.toString());
 	
 		}
-			//---------
-
-		if(runLect4==1)//Optioanl lect
-		{OptionalLect testOptinal = new OptionalLect();
+		
+		//3. Optional 
+		if(runLect3_Optional==1)
+		{
+		OptionalLect testOptinal = new OptionalLect();
 		Optional<Professor> prof1= Optional.of(new Professor("Jaya", 38, "MSc"));
 		//Optional <Professor> prof2= new Professor("Nasr", 46, "PhD");
 		Course course1 = new Course("Java II");
@@ -81,6 +87,6 @@ public class test_lectures123 {
 		);
 		}
 		
-	}
+	}//main
 
 }
