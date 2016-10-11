@@ -2,8 +2,9 @@
  * 
  */
 package abstrct.lib;
-import abstrct.lib.Employee.Qualification;
+//import abstrct.lib.Employee.Qualification;
 import dw317.lib.Name;
+import abstrct.lib.Qualification;
 
 /**
  * @author nasro
@@ -21,10 +22,12 @@ public class TestMain1_Abstract {
 
 		//2.1  upcasting 
 		Name nameEmp1 = new Name("Julien", "peter");
-		PartTimeEmployee emp1Parttime = new PartTimeEmployee(nameEmp1, 31,"e1234", (short) 10, Qualification.BSC, 20.5, 10);
+		PartTimeEmployee emp1Parttime = new PartTimeEmployee(nameEmp1, 31,"e1234", 
+											(short) 10, Qualification.BSC, 20.5, 10);
 		Person p1 = emp1Parttime;  // correct (up-casting)
 		
 		//2.2 down-casting (explicit)
+		System.out.println(emp1Parttime.toString());
 		System.out.println(emp1Parttime.getName()+" income per 10hrs:"+ emp1Parttime.getIncome());
 		System.out.println(emp1Parttime.getName()+" rate:"+ emp1Parttime.getRate());
 		System.out.println("p1 employee assigned parttime employee -"+p1.getIncome());

@@ -10,9 +10,9 @@ public class TestSort_Main {
 	public static void main(String[] args) {
 
 		Student s1 = new Student("peter", 3.54, "1425");
-		Student s2 = new Student("sarah", 2.14, "1425");
-		Student s3 = new Student("jerry", 3.54, "1425");
-		Student s4 = new Student("mark", 3.9, "1425");
+		Student s2 = new Student("sarah", 2.14, "3214");
+		Student s3 = new Student("jerry", 3.54, "2451");
+		Student s4 = new Student("mark", 3.9, "5687");
 
 		Student studentArr[] = new Student[4];
 		studentArr[0] = s1;		studentArr[1] = s2;

@@ -3,13 +3,14 @@
  */
 package abstrct.lib;
 import dw317.lib.Name;
-import abstrct.lib.Employee.Qualification;
+//import abstrct.lib.Employee.Qualification;
+import abstrct.lib.Qualification;
 
 //-------------------- fullTimeEmployee --------------------
-class FullTimeEmployee extends Employee
+public class FullTimeEmployee extends Employee
 {
 	private double baseSalary;
-	protected FullTimeEmployee(Name name, int age, String emo_Id,  short experience, Qualification qualif, double baseSalary) {
+	public FullTimeEmployee(Name name, int age, String emo_Id,  short experience, Qualification qualif, double baseSalary) {
 		super(name, age, emo_Id, experience, qualif);
 		this.baseSalary=baseSalary;
 	}

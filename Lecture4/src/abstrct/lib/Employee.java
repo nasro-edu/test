@@ -3,14 +3,19 @@
  */
 package abstrct.lib;
 
-import abstrct.lib.Employee.Qualification;
+//import abstrct.lib.Employee.Qualification;
 import dw317.lib.Name;
 
-abstract class Employee extends Person{
+import java.io.Serializable;
+
+import abstrct.lib.Qualification;
+
+public abstract class Employee extends Person implements Serializable{
 	protected String emp_Id;
 	protected short experience;
 	protected Qualification  qualif;
-	 enum Qualification {TBC,BSC,MSC,PHD} ;
+	//protected Qualification  qualif;
+	 //enum Qualification {TBC,BSC,MSC,PHD} ;
 	
 	protected Employee(Name name, int age,  String emp_Id, short experience, Qualification qualif) {
 		super(name, age);
@@ -22,5 +27,7 @@ abstract class Employee extends Person{
 	{ if (experience>60 || experience<0) throw new IllegalArgumentException("experinec doesnt make senese");
 		this.experience=experience;
 	}
-	public String toString() {return super.toString()+"\n  Employee Id ="+ this.emp_Id+ ", Experience=="+this.experience+ ", Qualif = "+qualif;}
+	public String toString() {return super.toString()+"\n  Employee Id ="+ this.emp_Id+ ", "
+			+ "qualif = "+this.qualif+", "
+			+ "Experience=="+this.experience+ ", Qualif = "+qualif;}
 }

@@ -3,6 +3,8 @@
  */
 package Interfaces;
 
+import theAbstract.lib.Position;
+
 /**
  * @author nasro
  *
@@ -14,6 +16,4 @@ public interface Movable {
 	 void changePosition(Position pos);
 	 Position getCurrentPosition();
 	
-}
-class Position{ double x; double y; public Position(){}
 }

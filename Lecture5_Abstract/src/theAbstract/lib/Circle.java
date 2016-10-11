@@ -3,13 +3,16 @@
  */
 package theAbstract.lib;
 
+import Interfaces.Movable;
+
 /**
  * @author nasro
  *
  */
-public class Circle extends GeometricFigure {
+public class Circle extends GeometricFigure implements Movable{
 
 		private double radius=0.0;
+		private Position position;
 		
 		//public Circle () {super();}
 		//public Circle (double radius) {this.radius = radius;}
@@ -26,5 +29,30 @@ public class Circle extends GeometricFigure {
 		public double getPerimeter() {return 2* this.radius * Math.PI;}
 		public String toString () {return " This a circle with radius:"+this.radius;}
 
+		@Override
+		public void accelerate() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void decelerate() {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void changePosition(Position pos) {
+			position.setX(pos.getX());
+			position.setY(pos.getY());
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public Position getCurrentPosition() {
+			// TODO Auto-generated method stub
+			return position;
+		}
 }
 

@@ -3,11 +3,13 @@
  */
 package abstrct.lib;
 import dw317.lib.Name;
-import abstrct.lib.Employee.Qualification;
+//import abstrct.lib.Employee.Qualification;
+import abstrct.lib.Qualification;
 
 //-------------------- fullTimeEmployee --------------------
-class PartTimeEmployee extends Employee
+public class PartTimeEmployee extends Employee
 {
+	//private transient double rate;
 	private double rate;
 	private double nberWorkingHours;
 	
