@@ -14,12 +14,12 @@ public class TestMain_GenericIntro {
 }
 
 //===========public 
-class Test 
+/*class Test 
 {
 	public  T max(<T implements Comparable> a, <T implements Comparable> b)
 	{
 		if (a, b) return a;
 		
 	}
-}
+}*/
 

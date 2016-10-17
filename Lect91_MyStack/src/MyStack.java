@@ -30,15 +30,16 @@ public class MyStack<T> {
 	//+getSize(): int
 	public int getSize(){return aList.size();}
 	//+peek(): Object
-	public <T> Object peek() 
+	public T peek() 
 	{ try {return aList.get(aList.size()-1);}
 		catch (Exception e) { System.out.println("stack is emplty, you cannot get the top");
-								return -1;
+								//System.exit(1);
 								}
+	return null;
 	}
 	//+pop(): Object
-	public <T> Object pop() 
-		{Object o = peek();
+	public T  pop() 
+		{T o = (T) peek();
 		aList.remove(aList.size()-1);
 		return o;
 		}
@@ -48,7 +49,7 @@ public class MyStack<T> {
 	public int search(T o) {return aList.indexOf(o);}
 	
 	//display
-	public  <T> void displayList()
+	public   void displayList()
 	{String outputStr = "";  String listSepart=" || ";
 	outputStr = "List(size:"+aList.size()+")[";
 		for (int i=0; i<aList.size(); i++)

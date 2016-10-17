@@ -26,7 +26,7 @@ public class Test1Main_Stack {
 	public static void testStackStrings()
 	{
 		MyStack<String> pile = new MyStack<>();
-		System.out.println("elem on top:"+pile.peek());
+		//System.out.println("elem on top:"+pile.peek());
 		pile.push("peter");	
 		pile.push("smith");
 		pile.push("karim");	pile.push("leo");
