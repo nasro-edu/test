@@ -46,7 +46,7 @@ import dw317.lib.business.RoomDelegate;
 public class HotelFileLoader {
 
 	//(with a private no-parameter constructor to prevent instantiation) 
-	HotelFileLoader() {
+	private HotelFileLoader() {
 		// TODO Auto-generated constructor stub
 	}
 	

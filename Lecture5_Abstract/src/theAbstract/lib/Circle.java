@@ -14,6 +14,7 @@ public class Circle extends GeometricFigure implements Movable{
 		private double radius=0.0;
 		private Position position;
 		
+		
 		//public Circle () {super();}
 		//public Circle (double radius) {this.radius = radius;}
 		public Circle (double radius, String name, String color, boolean filled)
@@ -27,7 +28,7 @@ public class Circle extends GeometricFigure implements Movable{
 		public double getDiameter() {return 2* this.radius;}
 		public double getArea() {return this.radius * this.radius  * Math.PI;}
 		public double getPerimeter() {return 2* this.radius * Math.PI;}
-		public String toString () {return " This a circle with radius:"+this.radius;}
+		public String toString () {return super.toString()+" - radius:"+this.radius;}
 
 		@Override
 		public void accelerate() {

@@ -50,7 +50,7 @@ class StudentComaparison implements Comparator <Student>
 	public int compare (Student stud1, Student stud2)
 	{
 		int gpaCompRes = stud1.getGpa()>stud2.getGpa()?1:stud1.getGpa()<stud2.getGpa()?-1:0;
-		//if the two student got the same gpa, then sort their names
+		//if the two student got the same gpa, then compare their names
 		if (gpaCompRes==0) 
 				return stud1.getName().compareTo(stud2.getName());
 		return gpaCompRes;

@@ -47,8 +47,8 @@ public abstract class GeometricFigure {
 	public boolean isFilled() {return filled;}
 	public void setFilled(boolean filled) {this.filled = filled;}
 
-
-	public String toString(){ return "Figure "+this.name+", hascolor:"+this.color ;}
+	public String toString(){ return this.name+":";}
+	//public String toString(){ return "Figure "+this.name+", hascolor:"+this.color ;}
 	public abstract double getArea();
 	public abstract double getPerimeter() ; 
 

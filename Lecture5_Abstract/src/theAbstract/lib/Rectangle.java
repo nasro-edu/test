@@ -28,8 +28,10 @@ public class Rectangle extends GeometricFigure {
 		public void setHeight(double height) {this.height = height;}
 
 
-		public String toString () {return super.toString()+". This a Rectangle  with (color, filed, width, height)=("+
-				this.color + ","+ this.filled + "," + this.width + ","+ this.height +")";}
+		public String toString () {return super.toString()+"(width, height)=("+
+				this.width + ","+ this.height +")";}
+		//public String toString () {return super.toString()+"(color, filed, width, height)=("+
+			//	this.color + ","+ this.filled + "," + this.width + ","+ this.height +")";}
 
 		public double getArea() {return this.width* this.height;}
 		public double getPerimeter() {return 2* (this.width* this.height);}

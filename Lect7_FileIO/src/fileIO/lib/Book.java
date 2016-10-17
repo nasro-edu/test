@@ -78,10 +78,9 @@ public class Book implements Serializable, Comparable<Book> {
 	}
 	@Override
 	public int compareTo(Book arg0) {
-		// TODO Auto-generated method stub
-		int res = (this.price>arg0.price?1:this.price>arg0.price?-1:0);
-		 res = res & this.isbn.compareToIgnoreCase(arg0.isbn);
-		return res;
+		if(this.price>arg0.price) return 1;
+		if(this.price<arg0.price) return -1;
+		return 0;
 	}
 	
 	

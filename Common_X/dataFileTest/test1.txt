@@ -1,0 +1,3 @@
+Book [isbn=0321456787, title=title 3, price=15.5]
+Book [isbn=0534420123, title=title 1, price=43.5]
+Book [isbn=0534420124, title=title 2, price=53.5]
