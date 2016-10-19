@@ -16,6 +16,9 @@ public class BookSample implements Comparable<BookSample> {
 			this.price = price;
 		}
 		//------------
+		public BookSample () {
+			}
+		//------------
 		public BookSample (BookSample  aBook) {
 			aBook.setBookData(isbn, title, author, genre, year, nberPages,price) ;		}
 

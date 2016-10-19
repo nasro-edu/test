@@ -40,7 +40,8 @@ public class MyFilePorcess_Utilities {
 			return itemsList ;
 		}
 	//-----------------------------------------------------------------
-	//-- given the string list of String lines  that were read from a text file, put them as objects in an array of object Employees
+	//-- given the string list of String lines  that were read from a text file, 
+	//put them as objects in an array of object Employees
 	public static ArrayList<Employee> constructEmplyeeObjArrayList(List<String> employeesSTRList) {	ArrayList <Employee> EmployeeArrList = new ArrayList();
 	String tokenizedEmplStr [] = null;
 	int index=0;
